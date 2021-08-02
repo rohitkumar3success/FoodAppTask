@@ -1,0 +1,23 @@
+import React, { useState } from "react";
+import { View, Picker, StyleSheet } from "react-native";
+
+const App = () => {
+  const [selectedValue, setSelectedValue] = useState("java");
+  return (
+    <View style={{borderRadius: 50, borderWidth: 1, borderColor: '#bdc3c7', overflow: 'hidden'}}>
+      <Picker
+        selectedValue={selectedValue}
+        style={{ height: 50, width: 330 }}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Height" value="4 ft" />
+        <Picker.Item label="5 ft" value="5 ft" />
+        <Picker.Item label="6 ft" value="6 ft" />
+        <Picker.Item label="7 ft" value="7 ft" />
+      </Picker>
+    </View>
+  );
+}
+
+
+export default App;
