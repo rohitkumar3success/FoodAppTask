@@ -1,0 +1,94 @@
+import React, {useState} from 'react';
+import {Text, View, StyleSheet, TextInput, Picker,TouchableOpacity} from 'react-native';
+
+const App = () => {
+  return (
+    <View style={styles.box}>
+    
+      <View style={styles.container}>
+        <Picker mode="dropdown" itemStyle={{textAlign: "center"}}>
+          <Picker.Item label="Height" value="5 ft" />
+          <Picker.Item label="5 ft" value="5 ft" />
+          <Picker.Item label="6 ft" value="6 ft" />
+          <Picker.Item label="7 ft" value="7 ft" />
+        </Picker>
+      </View>
+      <View style={styles.container}>
+        <Picker mode="dropdown">
+          <Picker.Item label="Weight" value="5 ft" />
+    <Picker.Item label="20 kg" value="20 kg" />
+    <Picker.Item label="40 kg" value="40 kg" />
+    <Picker.Item label="60 kg" value="60 kg" />
+        </Picker>
+      </View>
+      <View style={styles.container}>
+        <Picker mode="dropdown">
+          <Picker.Item label="Diet Type" value="5 ft" />
+    <Picker.Item label="breakfast" value="breakfast" />
+    <Picker.Item label="lunch" value="lunch" />
+    <Picker.Item label="dinner" value="dinner" />
+        </Picker>
+      </View>
+      
+      <View style={styles.container}>
+        <Picker mode="dropdown">
+          <Picker.Item label="Allergies" value="5 ft" />
+    <Picker.Item label="perfume" value="perfume" />
+    <Picker.Item label="cold water" value="cold water" />
+    <Picker.Item label="" value="" />
+        </Picker>
+      </View>
+      <View style={styles.container}>
+        <Picker mode="dropdown">
+          <Picker.Item label="Medical Condition" value="5 ft" />
+          <Picker.Item label="" value="" />
+          
+        </Picker>
+      </View>
+
+      <TouchableOpacity
+          onPress={this.myFun}
+          style={{
+            backgroundColor: '#FF8C00',
+            borderWidth: 1,
+            margin: 10,
+            padding: 10,
+            width: '80%',
+            borderRadius: 40,
+          }}>
+          <Text
+            style={{
+              color: 'white',
+              textAlign: 'center',
+              fontSize: 17,
+              fontWeight: 'bold',
+            }}>
+            SUBMIT
+          </Text>
+        </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 20,
+    marginBottom: 50,
+    borderWidth: 3,
+    borderColor: 'grey',
+    overflow: 'hidden',
+   // paddingLeft: "25%"
+
+  },
+
+  box: {
+    flexDirection: "column",
+    justifyContent: 'center',
+    padding: 60,
+    
+    
+
+  },
+});
+
+export default App;
