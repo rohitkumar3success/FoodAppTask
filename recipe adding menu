@@ -1,0 +1,72 @@
+import React from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar ,Image,TouchableOpacity} from 'react-native';
+
+const DATA = [
+  {
+    id: '',
+    title: 'Chowmin',
+  },
+  {
+    id: '',
+    title: 'Paneer',
+  },
+  {
+    id: '',
+    title: 'Noodles',
+  },
+];
+
+const Item = ({ title }) => (
+  <View style={styles.item}>
+        <Image style={StyleSheet.imag} source={require('recipe1.png')} />
+                <Image style={StyleSheet.imag} source={require('like.png')} />
+               
+
+
+
+
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
+
+const App = () => {
+  const renderItem = ({ item }) => (
+    <Item title={item.title} />
+  );
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => {item.id}}
+          renderItem={renderItem}
+      />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    
+  },
+  item: {
+    padding:8,
+    height:200,
+    width: 180,
+    marginVertical: 1,
+    marginHorizontal: 2,
+    borderColor: 'grey',
+    borderRadius: 5,
+    borderWidth: 1,
+    
+
+  },
+  title: {
+    fontSize: 16,
+  },
+});
+
+export default App;
